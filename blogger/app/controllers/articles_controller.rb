@@ -10,6 +10,10 @@ end
 #shows you a particular article
 def show
 @article = Article.find(params[:id]) 
+#Creates the comment form on an article
+#Placed here instead of in def new b/c wen we view the article and display the comment form we're not running the article's "new" method - we're running the "show" method
+@comment = Comment.new
+@comment.article_id = @article.id  #links the comment to an article / many - one relationship
 end
 
 #takes you to the page where you WILL create an article
