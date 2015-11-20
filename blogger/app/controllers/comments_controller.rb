@@ -12,13 +12,14 @@ def create
 redirect_to article_path(@comment.article) #sends you to the article page you just commented on
 end
 
-=begin
+
 
 def destroy
 @comment = Comment.delete(params[:article_id])
-redirect_to (@comment.articles_path) #this may need to be changed to @article.articles_path
+redirect_to article_path(params[:id]) #sends you back to the article - sans comment
 end
 
+=begin
 def edit
 @comment = Comment.find(params[:article_id])
 end
