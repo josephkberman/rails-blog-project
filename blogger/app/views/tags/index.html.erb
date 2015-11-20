@@ -1,0 +1,14 @@
+<!-- TAGS INDEX -->
+
+<h1> List of All Tags</h1>
+<div align = "right"><p><%= link_to "Back to article list", articles_path %></p></div>
+
+<table id = "tags">
+	<% @tags.each do |t| %>
+	<tr>
+		<td><h3><%= link_to t.name.capitalize, tag_path(t)%></h3></td>
+		<td><i><%= link_to "Delete Tag", tag_path(t), method: :delete, data: {confirm: "Delete Tag?"} %> </td></i>
+	</tr>
+	<% end %>
+</table>
+

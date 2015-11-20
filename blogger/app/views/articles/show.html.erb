@@ -1,15 +1,28 @@
+
+
+
 <h1><%= @article.title %> </h1>
+
+<p>
+	Tags:
+		<% @article.tags.each do |tag| %>
+			<%= link_to tag.name, tag_path(tag) %>
+		<% end %>
+</p>
+<p><%= link_to "Back to Articles List", articles_path %></p><br><br><br>
+
 <p><%= @article.body %></p> 
 <br>
 
 <div align = "right">
 <table style = "width: 10%"><td> </td></tr>
 	<tr>
-		<td><%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Are you sure?"} %></td>
+		<td><%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Delete Article - Are you sure?"} %></td>
 		<td><%= link_to "Edit", edit_article_path(@article) %></td>
 	</tr>
 </table>
 </div>
+
 
 <br>
 <h2>Comments (<%= @article.comments.count %>)</h2> <!-- shows the comment count -->

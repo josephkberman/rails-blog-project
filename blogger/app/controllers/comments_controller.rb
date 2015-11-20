@@ -13,11 +13,11 @@ redirect_to article_path(@comment.article) #sends you to the article page you ju
 end
 
 
-
 def destroy
-@comment = Comment.delete(params[:article_id])
-redirect_to article_path(params[:id]) #sends you back to the article - sans comment
+@comment = Comment.delete(params[:id])
+redirect_to article_path(params[:article_id])
 end
+
 
 =begin
 def edit

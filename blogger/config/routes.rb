@@ -4,7 +4,7 @@ root to: 'articles#index'
 resources :articles do
 	resources :comments #creates comments as a SUB-CLASS
 end
-
+resources :tags
 end
 
   # The priority is based upon order of creation: first created -> highest priority.
